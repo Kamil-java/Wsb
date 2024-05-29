@@ -1,18 +1,18 @@
 version: '3.1'
 services:
   api:
-    container_name: 'CMS'
+    container_name: 'CRM'
     build: ../CMS_group
     ports:
       - "8080:8080"
     depends_on:
       - database
   database:
-    container_name: 'CMS-db'
+    container_name: 'CRM-db'
     image: postgres
     environment:
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: cms
+      POSTGRES_DB: crm
       POSTGRES_USER: admin
     volumes:
       - type: volume
